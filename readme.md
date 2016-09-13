@@ -1,9 +1,9 @@
-Git To Know You
+# Git To Know You
 
 This is a git repo intended to introduce you to the basic workflow and
 on-the-job tools you'll need to leverage the power of source control with git.
 
-Our to-do list
+# Our to-do list
 
 1. Convert this file to a simple markup language called "Markdown".
 2. Spell check the file at `lib/article.md`
