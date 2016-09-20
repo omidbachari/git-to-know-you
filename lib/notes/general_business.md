@@ -4,4 +4,4 @@
 - [x] stack overflow account
 - [x] quora account
 - [x] ruby rogues and programming throwdown podcast subscriptions
-- [X] read and note [this article](https://manifesto.co.uk/kanban-vs-scrum-vs-xp-an-agile-comparison/
+- [X] read and note [this article](https://manifesto.co.uk/kanban-vs-scrum-vs-xp-an-agile-comparison/)
