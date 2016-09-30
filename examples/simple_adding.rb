@@ -1,11 +1,10 @@
 def simple_adding(number)
-  i = 0
   sum = 0
-  number.times do
+  number.times do |i|
     i = i + 1
     sum += i
   end
   sum
 end
 
-puts simple_adding(140)
+puts simple_adding(12)
