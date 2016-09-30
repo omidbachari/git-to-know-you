@@ -74,4 +74,44 @@ SELECT type, heart_rate, (COUNT(*))
     ELSE "below target"
     END as "hr_zone"
     FROM exercise_logs
-    GROUP BY hr_zone;```
+    GROUP BY hr_zone;
+    ```
+
+- Splitting data into related tables:
+Preferable to make sure that a particular column of dad is only stored in a single location so there are less places to update. Make sure you use unique identifiers like a student id instead of name in case there are multiples students with the same name.
+
+- JOINing related tables:
+Cross Join -
+by putting both table names after FROM.
+Inner Join - implicit inner join:
+SELECT * FROM student_grades, students,
+  WHERE student_grades.studen_id = students.id;
+Explicit inner join:
+SELECT students.first_name, students.last_name, students.email, students.test, students.grade FROM students  
+  JOIN student_grades
+  ON students.id = student_grades.student_id;
+  WHERE grade > 90
+
+- Joining related tables with left outer joins:
+SELECT student.first_name, students.last_name, students_projects.title  
+  FROM students
+  LEFT OUTER JOIN students_projects
+  ON students.id = students_projects.student_id;
+LEFT tells SQL to retain everything from left table students, and OUTER states to return value even if there's nothing in that table.
+
+- Joining tables to themselves with self-joins:
+
+We've created a table with all the 'Harry Potter' movies, with a sequel_id column that matches the id of the sequel for each movie. Issue a SELECT that will show the title of each movie next to its sequel's title (or NULL if it doesn't have a sequel).
+
+```SELECT prequels.title, sequels.title
+    FROM movies prequels
+    LEFT OUTER JOIN movies sequels
+    ON sequels.id = prequels.sequel_id;
+    ```
+
+- Combing multiple joins:
+SELECT a.title, b.title FROM project_pairs
+  JOIN students_projects a
+  ON project_pairs.project1_id = a.id
+  JOIN students_projects b
+  ON project_pairs.project2_id = b.id;
